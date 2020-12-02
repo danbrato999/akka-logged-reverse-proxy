@@ -25,5 +25,5 @@ object JsonFormats {
     }
   }
 
-  implicit val proxyMessageFormat = jsonFormat3(ProxyMessage)
+  implicit val proxyMessageFormat = jsonFormat4(ProxyMessage)
 }

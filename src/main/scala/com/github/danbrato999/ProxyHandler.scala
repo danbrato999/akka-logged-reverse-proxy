@@ -2,6 +2,7 @@ package com.github.danbrato999
 
 import akka.actor.typed.{ActorRef, ActorSystem}
 import akka.http.scaladsl.model.{HttpRequest, HttpResponse}
+import com.typesafe.config.Config
 
 import scala.concurrent.Future
 
@@ -10,6 +11,6 @@ trait ProxyHandler {
 }
 
 object ProxyHandler {
-  def apply(logger: ActorRef[ProxyMessage])(implicit system: ActorSystem[_]) = new ProxyHandlerImpl(logger)
+  def apply(logger: ActorRef[ProxyMessage], config: Config)(implicit system: ActorSystem[_]) = new ProxyHandlerImpl(logger, config)
 }
 
